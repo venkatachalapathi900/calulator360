@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Calculator360</title>
+<meta name="description" content="Contact Calculator360 — Get in touch with us for any questions, suggestions or feedback.">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0a0a0f; --surface: #131318; --surface2: #1c1c24;
+    --accent: #7c6ff7; --accent2: #4fd1c5;
+    --text: #f0eeff; --text2: #9b97c4; --text3: #5c5880;
+    --border: rgba(124,111,247,0.15);
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 2.5rem; border-bottom: 1px solid var(--border);
+    background: rgba(10,10,15,0.95); backdrop-filter: blur(12px);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .logo { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+  .nav-home { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--text2); text-decoration: none; padding: 8px 18px; border: 1px solid var(--border); border-radius: 10px; transition: all 0.15s; }
+  .nav-home:hover { color: var(--text); border-color: var(--accent); }
+  .container { max-width: 700px; margin: 0 auto; padding: 3rem 2rem; }
+  .page-badge { display: inline-block; font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: rgba(124,111,247,0.1); border: 1px solid rgba(124,111,247,0.2); border-radius: 20px; padding: 4px 14px; margin-bottom: 1rem; }
+  h1 { font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .subtitle { color: var(--text2); font-size: 1rem; margin-bottom: 2.5rem; line-height: 1.6; }
+  .contact-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; text-align: center; }
+  .contact-card .icon { font-size: 2rem; margin-bottom: 0.75rem; }
+  .contact-card h3 { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .contact-card p { color: var(--text2); font-size: 0.82rem; }
+  .form-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; }
+  .form-card h2 { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; }
+  .field { margin-bottom: 1.25rem; }
+  .field label { display: block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.05em; color: var(--text2); margin-bottom: 8px; text-transform: uppercase; }
+  .field input, .field textarea, .field select {
+    width: 100%; font-family: 'DM Sans', sans-serif; font-size: 0.95rem;
+    padding: 12px 16px; background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 10px; color: var(--text); outline: none; transition: border-color 0.15s;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--accent); }
+  .field textarea { resize: vertical; min-height: 130px; }
+  .btn-submit {
+    width: 100%; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem;
+    padding: 14px; background: var(--accent); color: #fff; border: none;
+    border-radius: 10px; cursor: pointer; transition: background 0.15s;
+  }
+  .btn-submit:hover { background: #6a5ee0; }
+  .success-msg { display: none; background: rgba(79,209,197,0.1); border: 1px solid rgba(79,209,197,0.3); border-radius: 10px; padding: 1rem 1.25rem; color: var(--accent2); font-size: 0.95rem; margin-top: 1rem; text-align: center; }
+  footer { text-align: center; padding: 2rem; color: var(--text3); font-size: 0.82rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+  footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="/">∑ CALC</a>
+  <a class="nav-home" href="/">← Back to Calculator</a>
+</nav>
+
+<div class="container">
+  <div class="page-badge">Contact</div>
+  <h1>Get in Touch</h1>
+  <p class="subtitle">Have a suggestion, found a bug, or just want to say hello? We'd love to hear from you!</p>
+
+  <div class="contact-cards">
+    <div class="contact-card">
+      <div class="icon">💡</div>
+      <h3>Suggestions</h3>
+      <p>Want a new calculator? Tell us!</p>
+    </div>
+    <div class="contact-card">
+      <div class="icon">🐛</div>
+      <h3>Bug Report</h3>
+      <p>Found an issue? Let us know</p>
+    </div>
+    <div class="contact-card">
+      <div class="icon">🤝</div>
+      <h3>Partnership</h3>
+      <p>Business or collaboration</p>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <h2>✉️ Send us a Message</h2>
+    <div class="field">
+      <label>Your Name</label>
+      <input type="text" id="name" placeholder="Enter your name" />
+    </div>
+    <div class="field">
+      <label>Email Address</label>
+      <input type="email" id="email" placeholder="Enter your email" />
+    </div>
+    <div class="field">
+      <label>Subject</label>
+      <select id="subject">
+        <option value="">Select a subject</option>
+        <option value="suggestion">💡 Feature Suggestion</option>
+        <option value="bug">🐛 Bug Report</option>
+        <option value="partnership">🤝 Partnership</option>
+        <option value="other">💬 Other</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Message</label>
+      <textarea id="message" placeholder="Write your message here..."></textarea>
+    </div>
+    <button class="btn-submit" onclick="submitForm()">Send Message →</button>
+    <div class="success-msg" id="success-msg">
+      ✅ Thank you! Your message has been received. We'll get back to you soon!
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 Calculator360 | <a href="/">Home</a> | <a href="/about.html">About</a> | <a href="/privacy-policy.html">Privacy Policy</a>
+</footer>
+
+<script>
+function submitForm() {
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const subject = document.getElementById('subject').value;
+  const message = document.getElementById('message').value.trim();
+  if (!name || !email || !subject || !message) {
+    alert('Please fill in all fields before submitting.');
+    return;
+  }
+  if (!email.includes('@')) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+  document.getElementById('success-msg').style.display = 'block';
+  document.getElementById('name').value = '';
+  document.getElementById('email').value = '';
+  document.getElementById('subject').value = '';
+  document.getElementById('message').value = '';
+}
+</script>
+</body>
+</html>
