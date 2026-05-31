@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Calculator360</title>
+<meta name="description" content="About Calculator360 — Your free all-in-one calculator website for standard, scientific, finance, unit conversion and date calculations.">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0a0a0f; --surface: #131318; --surface2: #1c1c24;
+    --accent: #7c6ff7; --accent2: #4fd1c5; --accent3: #f6ad55; --accent4: #fc8181;
+    --text: #f0eeff; --text2: #9b97c4; --text3: #5c5880;
+    --border: rgba(124,111,247,0.15);
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 2.5rem; border-bottom: 1px solid var(--border);
+    background: rgba(10,10,15,0.95); backdrop-filter: blur(12px);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .logo { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+  .nav-home { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--text2); text-decoration: none; padding: 8px 18px; border: 1px solid var(--border); border-radius: 10px; transition: all 0.15s; }
+  .nav-home:hover { color: var(--text); border-color: var(--accent); }
+  .container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+  .hero { text-align: center; margin-bottom: 3rem; }
+  .page-badge { display: inline-block; font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: rgba(124,111,247,0.1); border: 1px solid rgba(124,111,247,0.2); border-radius: 20px; padding: 4px 14px; margin-bottom: 1rem; }
+  h1 { font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; }
+  .hero p { color: var(--text2); font-size: 1.05rem; line-height: 1.75; max-width: 600px; margin: 0 auto; }
+  .big-icon { font-size: 4rem; margin-bottom: 1rem; }
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .feature-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; text-align: center; }
+  .feature-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+  .feature-card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .feature-card p { color: var(--text2); font-size: 0.85rem; line-height: 1.6; }
+  .section { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; margin-bottom: 1.25rem; }
+  .section h2 { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; }
+  .section p { color: var(--text2); line-height: 1.75; font-size: 0.95rem; margin-bottom: 0.75rem; }
+  .section p:last-child { margin-bottom: 0; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+  .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; text-align: center; }
+  .stat-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .stat-label { color: var(--text3); font-size: 0.8rem; margin-top: 4px; }
+  .cta { text-align: center; background: linear-gradient(135deg, rgba(124,111,247,0.1), rgba(79,209,197,0.1)); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; margin-bottom: 2rem; }
+  .cta h2 { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem; }
+  .cta p { color: var(--text2); margin-bottom: 1.5rem; }
+  .btn { display: inline-block; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 12px 28px; background: var(--accent); color: #fff; border-radius: 10px; text-decoration: none; transition: background 0.15s; }
+  .btn:hover { background: #6a5ee0; }
+  footer { text-align: center; padding: 2rem; color: var(--text3); font-size: 0.82rem; border-top: 1px solid var(--border); }
+  footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="/">∑ CALC</a>
+  <a class="nav-home" href="/">← Back to Calculator</a>
+</nav>
+
+<div class="container">
+  <div class="hero">
+    <div class="big-icon">🧮</div>
+    <div class="page-badge">About Us</div>
+    <h1>About Calculator360</h1>
+    <p>Your free, all-in-one calculator website. We built Calculator360 to make calculations simple, fast, and accessible for everyone — students, professionals, and everyday users.</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">5+</div>
+      <div class="stat-label">Calculator Types</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">50+</div>
+      <div class="stat-label">Unit Conversions</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Free to Use</div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon">🔢</div>
+      <h3>Standard</h3>
+      <p>Basic arithmetic with calculation history for quick everyday use</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔬</div>
+      <h3>Scientific</h3>
+      <p>Trigonometry, logarithms, powers and advanced math functions</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💰</div>
+      <h3>Finance</h3>
+      <p>EMI, SIP, compound interest and GST calculators for India</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📏</div>
+      <h3>Converter</h3>
+      <p>Convert between 50+ units across 9 categories instantly</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📅</div>
+      <h3>Date & Age</h3>
+      <p>Calculate age, date differences, BMI and more</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🎯 Our Mission</h2>
+    <p>At Calculator360, our mission is simple — to provide a fast, free, and reliable calculator for everyone. Whether you're a student solving math problems, a professional calculating EMIs, or someone converting units, we've got you covered.</p>
+    <p>We believe powerful tools should be accessible to everyone, without any cost or complexity.</p>
+  </div>
+
+  <div class="section">
+    <h2>⚡ Why Calculator360?</h2>
+    <p><strong style="color:var(--accent2)">No downloads required</strong> — works directly in your browser on any device.</p>
+    <p><strong style="color:var(--accent2)">No sign-up needed</strong> — just open and start calculating instantly.</p>
+    <p><strong style="color:var(--accent2)">Always free</strong> — all calculators are completely free to use forever.</p>
+    <p><strong style="color:var(--accent2)">Fast & accurate</strong> — built with modern web technology for instant results.</p>
+  </div>
+
+  <div class="cta">
+    <h2>Ready to Calculate?</h2>
+    <p>Try all our free calculators right now — no sign-up required!</p>
+    <a class="btn" href="/">Open Calculator →</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 Calculator360 | <a href="/">Home</a> | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/contact.html">Contact</a>
+</footer>
+</body>
+</html>
