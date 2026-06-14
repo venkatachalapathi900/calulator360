@@ -1,273 +1,272 @@
 /* ==========================================
    CALCULATOR360 PRO
    CALCULATOR.JS
-   Standard Calculator Engine
-   Production Ready
+   Standard Calculator + History
 ========================================== */
 
-let currentValue = "0";
+"use strict";
+
+/* ==========================================
+   STATE
+========================================== */
+
+let currentInput = "0";
 let expression = "";
-let history = JSON.parse(
-    localStorage.getItem(
-        "calcHistory"
-    ) || "[]"
-);
-
-let justCalculated = false;
+let history = [];
 
 /* ==========================================
-   INIT
+   ELEMENTS
 ========================================== */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
+const calcDisplay = () =>
+    document.getElementById(
+        "calculatorDisplay"
+    );
 
-        updateDisplay();
-        renderHistory();
+const calcExpression = () =>
+    document.getElementById(
+        "calculatorExpression"
+    );
 
+const historyContainer = () =>
+    document.getElementById(
+        "calculatorHistory"
+    );
+
+/* ==========================================
+   DISPLAY UPDATE
+========================================== */
+
+function updateCalculatorDisplay() {
+
+    const display =
+        calcDisplay();
+
+    if (display) {
+        display.value =
+            currentInput;
     }
-);
-
-/* ==========================================
-   DISPLAY
-========================================== */
-
-function updateDisplay() {
 
     const expr =
-        document.getElementById(
-            "std-expression"
-        );
+        calcExpression();
 
-    const result =
-        document.getElementById(
-            "std-result"
-        );
-
-    if (expr)
-        expr.textContent =
+    if (expr) {
+        expr.innerText =
             expression;
+    }
 
-    if (result)
-        result.textContent =
-            currentValue;
 }
 
 /* ==========================================
-   NUMBERS
+   NUMBER INPUT
 ========================================== */
 
-function inputNumber(num) {
+function calcNumber(num) {
 
-    if (justCalculated) {
+    if (
+        currentInput === "0"
+    ) {
 
-        currentValue = num;
-        expression = "";
-        justCalculated = false;
+        currentInput =
+            num.toString();
 
     } else {
 
-        if (
-            currentValue === "0"
-        ) {
-            currentValue = num;
-        } else {
-            currentValue += num;
-        }
+        currentInput +=
+            num.toString();
+
     }
 
-    updateDisplay();
+    updateCalculatorDisplay();
+
 }
 
 /* ==========================================
    DECIMAL
 ========================================== */
 
-function inputDecimal() {
+function calcDecimal() {
 
     if (
-        !currentValue.includes(".")
+        !currentInput.includes(".")
     ) {
 
-        currentValue += ".";
+        currentInput += ".";
 
-        updateDisplay();
     }
+
+    updateCalculatorDisplay();
+
 }
 
 /* ==========================================
    OPERATOR
 ========================================== */
 
-function inputOperator(op) {
+function calcOperator(op) {
 
     expression +=
-        currentValue +
+        currentInput +
         " " +
         op +
         " ";
 
-    currentValue = "0";
+    currentInput = "0";
 
-    justCalculated = false;
+    updateCalculatorDisplay();
 
-    updateDisplay();
 }
 
 /* ==========================================
    CLEAR
 ========================================== */
 
-function clearCalculator() {
+function calcClear() {
 
-    currentValue = "0";
+    currentInput = "0";
     expression = "";
-    justCalculated = false;
 
-    updateDisplay();
+    updateCalculatorDisplay();
+
 }
 
 /* ==========================================
-   DELETE
+   BACKSPACE
 ========================================== */
 
-function deleteLast() {
+function calcDelete() {
+
+    currentInput =
+        currentInput.slice(
+            0,
+            -1
+        );
 
     if (
-        currentValue.length > 1
+        currentInput.length === 0
     ) {
 
-        currentValue =
-            currentValue.slice(
-                0,
-                -1
-            );
+        currentInput = "0";
 
-    } else {
-
-        currentValue = "0";
     }
 
-    updateDisplay();
+    updateCalculatorDisplay();
+
 }
 
 /* ==========================================
-   NEGATIVE
+   TOGGLE SIGN
 ========================================== */
 
-function toggleSign() {
+function calcToggleSign() {
 
     if (
-        currentValue.startsWith("-")
+        currentInput.startsWith("-")
     ) {
 
-        currentValue =
-            currentValue.substring(
+        currentInput =
+            currentInput.substring(
                 1
             );
 
     } else {
 
-        currentValue =
-            "-" + currentValue;
+        currentInput =
+            "-" +
+            currentInput;
+
     }
 
-    updateDisplay();
+    updateCalculatorDisplay();
+
 }
 
 /* ==========================================
-   PERCENTAGE
+   PERCENT
 ========================================== */
 
-function percentage() {
+function calcPercent() {
 
-    const value =
-        parseFloat(
-            currentValue
-        );
-
-    currentValue =
+    currentInput =
         (
-            value / 100
+            parseFloat(
+                currentInput
+            ) / 100
         ).toString();
 
-    updateDisplay();
+    updateCalculatorDisplay();
+
 }
 
 /* ==========================================
-   CALCULATE
+   EVALUATE
 ========================================== */
 
-function calculate() {
+function calcEquals() {
 
     try {
 
-        const finalExpression =
+        const fullExpression =
             expression +
-            currentValue;
-
-        const safeExpression =
-            finalExpression
-                .replace(
-                    /×/g,
-                    "*"
-                )
-                .replace(
-                    /÷/g,
-                    "/"
-                );
+            currentInput;
 
         const result =
             Function(
-                `"use strict";return (${safeExpression})`
+                `"use strict";
+                return (${fullExpression})`
             )();
 
-        addHistory(
-            finalExpression,
+        saveHistory(
+            fullExpression,
             result
         );
 
-        currentValue =
-            parseFloat(
-                Number(result)
-                    .toFixed(12)
+        currentInput =
+            Number(
+                result.toFixed(12)
             ).toString();
 
-        expression =
-            finalExpression + " =";
+        expression = "";
 
-        justCalculated = true;
+        updateCalculatorDisplay();
 
-        updateDisplay();
+    } catch {
 
-    } catch (e) {
+        currentInput = "Error";
 
-        currentValue =
-            "Error";
+        updateCalculatorDisplay();
 
-        updateDisplay();
+        setTimeout(
+            () => {
+                calcClear();
+            },
+            1500
+        );
+
     }
+
 }
 
 /* ==========================================
    HISTORY
 ========================================== */
 
-function addHistory(
-    expr,
+function saveHistory(
+    expression,
     result
 ) {
 
     history.unshift({
-        expression: expr,
+        expression,
         result
     });
 
     if (
         history.length > 50
     ) {
+
         history.pop();
+
     }
 
     localStorage.setItem(
@@ -276,51 +275,94 @@ function addHistory(
     );
 
     renderHistory();
+
 }
+
+/* ==========================================
+   LOAD HISTORY
+========================================== */
+
+function loadHistory() {
+
+    const stored =
+        localStorage.getItem(
+            "calcHistory"
+        );
+
+    if (stored) {
+
+        history =
+            JSON.parse(stored);
+
+        renderHistory();
+
+    }
+
+}
+
+/* ==========================================
+   RENDER HISTORY
+========================================== */
 
 function renderHistory() {
 
     const container =
-        document.getElementById(
-            "calc-history"
-        );
+        historyContainer();
 
-    if (!container) return;
+    if (!container)
+        return;
 
     if (
         history.length === 0
     ) {
 
         container.innerHTML =
-            `
-            <div class="history-empty">
-                No History
-            </div>
-        `;
+            `<p>No history yet</p>`;
 
         return;
+
     }
 
     container.innerHTML =
         history
             .map(
                 item => `
-            <div
-                class="history-item"
-                onclick="loadHistory('${item.result}')"
-            >
-                <div class="history-expression">
-                    ${item.expression}
-                </div>
+                <div class="history-item"
+                     onclick="useHistory('${item.result}')">
 
-                <div class="history-result">
-                    ${item.result}
+                    <div class="history-expression">
+                        ${item.expression}
+                    </div>
+
+                    <div class="history-result">
+                        = ${item.result}
+                    </div>
+
                 </div>
-            </div>
-        `
+            `
             )
             .join("");
+
 }
+
+/* ==========================================
+   USE HISTORY VALUE
+========================================== */
+
+function useHistory(
+    value
+) {
+
+    currentInput =
+        value.toString();
+
+    updateCalculatorDisplay();
+
+}
+
+/* ==========================================
+   CLEAR HISTORY
+========================================== */
 
 function clearHistory() {
 
@@ -331,18 +373,7 @@ function clearHistory() {
     );
 
     renderHistory();
-}
 
-function loadHistory(
-    result
-) {
-
-    currentValue =
-        result.toString();
-
-    expression = "";
-
-    updateDisplay();
 }
 
 /* ==========================================
@@ -351,41 +382,18 @@ function loadHistory(
 
 function copyResult() {
 
-    navigator.clipboard.writeText(
-        currentValue
-    );
+    navigator.clipboard
+        .writeText(
+            currentInput
+        )
+        .then(() => {
 
-    showToast(
-        "Copied"
-    );
-}
+            console.log(
+                "Copied"
+            );
 
-/* ==========================================
-   TOAST
-========================================== */
+        });
 
-function showToast(message) {
-
-    let toast =
-        document.createElement(
-            "div"
-        );
-
-    toast.className =
-        "calc-toast";
-
-    toast.textContent =
-        message;
-
-    document.body.appendChild(
-        toast
-    );
-
-    setTimeout(() => {
-
-        toast.remove();
-
-    }, 2000);
 }
 
 /* ==========================================
@@ -394,73 +402,80 @@ function showToast(message) {
 
 document.addEventListener(
     "keydown",
-    e => {
+    event => {
 
         const key =
-            e.key;
+            event.key;
 
         if (
             /^[0-9]$/.test(key)
         ) {
-            inputNumber(key);
+
+            calcNumber(key);
+
         }
 
         if (
             key === "."
         ) {
-            inputDecimal();
+
+            calcDecimal();
+
         }
 
         if (
-            key === "+"
+            [
+                "+",
+                "-",
+                "*",
+                "/"
+            ].includes(key)
         ) {
-            inputOperator("+");
+
+            calcOperator(key);
+
         }
 
         if (
-            key === "-"
-        ) {
-            inputOperator("-");
-        }
-
-        if (
-            key === "*"
-        ) {
-            inputOperator("*");
-        }
-
-        if (
-            key === "/"
+            key === "Enter"
         ) {
 
-            e.preventDefault();
+            event.preventDefault();
 
-            inputOperator("/");
-        }
+            calcEquals();
 
-        if (
-            key === "Enter" ||
-            key === "="
-        ) {
-
-            e.preventDefault();
-
-            calculate();
         }
 
         if (
             key === "Backspace"
         ) {
 
-            deleteLast();
+            calcDelete();
+
         }
 
         if (
             key === "Escape"
         ) {
 
-            clearCalculator();
+            calcClear();
+
         }
+
+    }
+);
+
+/* ==========================================
+   INIT
+========================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        loadHistory();
+
+        updateCalculatorDisplay();
 
     }
 );
@@ -469,39 +484,35 @@ document.addEventListener(
    EXPORTS
 ========================================== */
 
-window.inputNumber =
-    inputNumber;
+window.calcNumber =
+    calcNumber;
 
-window.inputDecimal =
-    inputDecimal;
+window.calcDecimal =
+    calcDecimal;
 
-window.inputOperator =
-    inputOperator;
+window.calcOperator =
+    calcOperator;
 
-window.clearCalculator =
-    clearCalculator;
+window.calcClear =
+    calcClear;
 
-window.deleteLast =
-    deleteLast;
+window.calcDelete =
+    calcDelete;
 
-window.toggleSign =
-    toggleSign;
+window.calcToggleSign =
+    calcToggleSign;
 
-window.percentage =
-    percentage;
+window.calcPercent =
+    calcPercent;
 
-window.calculate =
-    calculate;
-
-window.copyResult =
-    copyResult;
+window.calcEquals =
+    calcEquals;
 
 window.clearHistory =
     clearHistory;
 
-window.loadHistory =
-    loadHistory;
+window.copyResult =
+    copyResult;
 
-console.log(
-    "Calculator.js Loaded Successfully"
-);
+window.useHistory =
+    useHistory;
