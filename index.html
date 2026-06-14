@@ -1,3 +1,9 @@
+<!-- ==========================================
+     CALCULATOR360 PRO
+     INDEX.HTML (PART 1 OF 4)
+     HEAD + NAVBAR + HERO + STANDARD + SCIENTIFIC
+========================================== -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,22 +11,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calculator360 Pro - Free Online Calculators & Property Tools</title>
+<title>
+Calculator360 Pro | EMI, SIP, GST, Property, Unit Converter & Scientific Calculator
+</title>
 
-<meta name="description"
-content="Free online calculator suite including Scientific Calculator, EMI Calculator, SIP Calculator, GST Calculator, Property Converter, Area Converter, Age Calculator and more.">
+<meta
+name="description"
+content="Premium all-in-one calculator platform. EMI, SIP, GST, Property, Scientific, Unit Converter, Age Calculator, Land Converter, CAGR, FD, RD and more."
+>
 
-<meta name="keywords"
-content="calculator, emi calculator, sip calculator, gst calculator, property converter, gaj to sqft, cent to sqft, bigha converter, online calculator">
+<meta
+name="keywords"
+content="calculator, emi calculator, sip calculator, gst calculator, scientific calculator, land converter, property calculator, calculator360"
+/>
 
-<meta name="theme-color" content="#6C63FF">
+<meta name="robots" content="index,follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculator360 Pro">
+<meta property="og:description" content="India's Most Advanced Calculator Platform">
+<meta property="og:url" content="https://calculator360.co.in">
 
 <link rel="canonical" href="https://calculator360.co.in">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet"
+/>
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -28,126 +45,966 @@ content="calculator, emi calculator, sip calculator, gst calculator, property co
 <script defer src="js/calculator.js"></script>
 <script defer src="js/scientific.js"></script>
 <script defer src="js/converter.js"></script>
-<script defer src="js/property.js"></script>
 <script defer src="js/finance.js"></script>
+<script defer src="js/property.js"></script>
 <script defer src="js/date.js"></script>
 
 </head>
 
 <body>
 
-<!-- =========================================
-NAVBAR
-========================================= -->
+<!-- ==========================================
+     NAVBAR
+========================================== -->
 
 <header class="navbar">
 
-<div class="container nav-container">
+    <div class="container">
 
-<a href="/" class="logo">
-<span>∑</span>
-Calculator360
-</a>
+        <div class="nav-wrapper">
 
-<nav class="desktop-nav">
+            <a href="#" class="logo">
 
-<a href="#standard">Standard</a>
-<a href="#scientific">Scientific</a>
-<a href="#finance">Finance</a>
-<a href="#property">Property</a>
-<a href="#converter">Converter</a>
-<a href="#date">Date</a>
+                <span class="logo-icon">
+                    ∑
+                </span>
 
-</nav>
+                Calculator360
 
-<div class="nav-actions">
+            </a>
 
-<button id="themeToggle" class="theme-btn">
-🌙
-</button>
+            <nav class="desktop-nav">
 
-<button class="mobile-menu-btn">
-☰
-</button>
+                <button onclick="showPage('home')">
+                    Home
+                </button>
 
-</div>
+                <button onclick="showPage('calculator')">
+                    Calculator
+                </button>
 
-</div>
+                <button onclick="showPage('scientific')">
+                    Scientific
+                </button>
+
+                <button onclick="showPage('finance')">
+                    Finance
+                </button>
+
+                <button onclick="showPage('property')">
+                    Property
+                </button>
+
+                <button onclick="showPage('converter')">
+                    Converter
+                </button>
+
+                <button onclick="showPage('date')">
+                    Date Tools
+                </button>
+
+            </nav>
+
+            <button
+            class="theme-btn"
+            onclick="toggleTheme()">
+
+                🌙
+
+            </button>
+
+        </div>
+
+    </div>
 
 </header>
 
-<!-- =========================================
-HERO SECTION
-========================================= -->
+<!-- ==========================================
+     HERO PAGE
+========================================== -->
 
-<section class="hero">
+<section
+id="home-page"
+class="page active-page">
+
+    <div class="hero">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <span class="hero-badge">
+                    🚀 India's Most Advanced Calculator Suite
+                </span>
+
+                <h1>
+
+                    One Platform.
+                    Every Calculator You'll Ever Need.
+
+                </h1>
+
+                <p>
+
+                    Standard Calculator,
+                    Scientific Calculator,
+                    EMI Calculator,
+                    SIP Calculator,
+                    Property Tools,
+                    Land Converter,
+                    Unit Converter,
+                    GST Calculator
+                    and much more.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button
+                    class="btn-primary"
+                    onclick="showPage('calculator')">
+
+                        Start Calculating
+
+                    </button>
+
+                    <button
+                    class="btn-secondary"
+                    onclick="showPage('finance')">
+
+                        Explore Finance Tools
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FEATURES -->
+
+    <section class="features">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Everything In One Place
+                </h2>
+
+                <p>
+                    Built for Students, Professionals,
+                    Engineers, Investors and Property Buyers.
+                </p>
+
+            </div>
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <h3>
+                        🔢 Standard Calculator
+                    </h3>
+
+                    <p>
+                        Fast calculations with history support.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <h3>
+                        🧪 Scientific Calculator
+                    </h3>
+
+                    <p>
+                        Trigonometry, Logarithms,
+                        Exponents and Advanced Functions.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <h3>
+                        💰 Finance Hub
+                    </h3>
+
+                    <p>
+                        EMI, SIP, FD, RD, GST,
+                        PPF and CAGR Calculators.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <h3>
+                        🏠 Property Tools
+                    </h3>
+
+                    <p>
+                        Land Area Converter,
+                        Property Value Calculator,
+                        Rental Yield and More.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+
+<!-- ==========================================
+     STANDARD CALCULATOR PAGE
+========================================== -->
+
+<section
+id="calculator-page"
+class="page">
+
+    <div class="container">
+
+        <div class="page-header">
+
+            <h2>
+                Standard Calculator
+            </h2>
+
+            <p>
+                Fast & responsive calculations.
+            </p>
+
+        </div>
+
+        <div class="calculator-layout">
+
+            <!-- Calculator -->
+
+            <div class="calculator-card">
+
+                <div
+                id="calculatorExpression"
+                class="expression">
+
+                </div>
+
+                <input
+                id="calculatorDisplay"
+                class="calculator-display"
+                readonly
+                value="0">
+
+                <div class="calculator-grid">
+
+                    <button onclick="calcClear()">AC</button>
+                    <button onclick="calcDelete()">⌫</button>
+                    <button onclick="calcPercent()">%</button>
+                    <button onclick="calcOperator('/')">÷</button>
+
+                    <button onclick="calcNumber(7)">7</button>
+                    <button onclick="calcNumber(8)">8</button>
+                    <button onclick="calcNumber(9)">9</button>
+                    <button onclick="calcOperator('*')">×</button>
+
+                    <button onclick="calcNumber(4)">4</button>
+                    <button onclick="calcNumber(5)">5</button>
+                    <button onclick="calcNumber(6)">6</button>
+                    <button onclick="calcOperator('-')">−</button>
+
+                    <button onclick="calcNumber(1)">1</button>
+                    <button onclick="calcNumber(2)">2</button>
+                    <button onclick="calcNumber(3)">3</button>
+                    <button onclick="calcOperator('+')">+</button>
+
+                    <button onclick="calcToggleSign()">±</button>
+                    <button onclick="calcNumber(0)">0</button>
+                    <button onclick="calcDecimal()">.</button>
+                    <button
+                    class="equal-btn"
+                    onclick="calcEquals()">
+                    =
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- History -->
+
+            <div class="history-card">
+
+                <div class="history-header">
+
+                    <h3>
+                        Calculation History
+                    </h3>
+
+                    <button
+                    onclick="clearHistory()">
+
+                        Clear
+
+                    </button>
+
+                </div>
+
+                <div
+                id="calculatorHistory">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     SCIENTIFIC PAGE
+========================================== -->
+
+<section
+id="scientific-page"
+class="page">
 
 <div class="container">
 
-<div class="hero-content">
+<div class="page-header">
 
-<div class="hero-badge">
-
-🚀 India's Most Advanced Calculator Platform
-
-</div>
-
-<h1>
-
-One Platform For Every Calculation
-
-</h1>
+<h2>
+Scientific Calculator
+</h2>
 
 <p>
-
-Professional calculators for finance, property,
-science, business and daily use.
-
-Convert Gaj, Cent, Guntha, Bigha, Kanal,
-Marla, Katha, Ground, Acre, Hectare,
-Square Feet and more instantly.
-
+Advanced Mathematical Functions
 </p>
 
-<div class="hero-buttons">
+</div>
 
-<a href="#standard" class="btn btn-primary">
-Start Calculating
-</a>
+<div class="scientific-card">
 
-<a href="#property" class="btn btn-secondary">
-Property Converter
-</a>
+<input
+id="scientificDisplay"
+class="calculator-display"
+readonly
+value="0">
+
+<div class="scientific-grid">
+
+<button onclick="sciFunction('sin')">sin</button>
+<button onclick="sciFunction('cos')">cos</button>
+<button onclick="sciFunction('tan')">tan</button>
+<button onclick="sciFunction('log')">log</button>
+<button onclick="sciFunction('ln')">ln</button>
+
+<button onclick="sciFunction('sqrt')">√</button>
+<button onclick="sciFunction('square')">x²</button>
+<button onclick="sciFunction('cube')">x³</button>
+<button onclick="sciFunction('factorial')">n!</button>
+<button onclick="sciFunction('inverse')">1/x</button>
+
+<button onclick="sciFunction('pi')">π</button>
+<button onclick="sciFunction('e')">e</button>
+<button onclick="sciAppend('(')">(</button>
+<button onclick="sciAppend(')')">)</button>
+<button onclick="sciDelete()">⌫</button>
+
+<button onclick="sciAppend('7')">7</button>
+<button onclick="sciAppend('8')">8</button>
+<button onclick="sciAppend('9')">9</button>
+<button onclick="sciAppend('/')">÷</button>
+<button onclick="sciClear()">AC</button>
+
+<button onclick="sciAppend('4')">4</button>
+<button onclick="sciAppend('5')">5</button>
+<button onclick="sciAppend('6')">6</button>
+<button onclick="sciAppend('*')">×</button>
+<button onclick="memoryRecall()">MR</button>
+
+<button onclick="sciAppend('1')">1</button>
+<button onclick="sciAppend('2')">2</button>
+<button onclick="sciAppend('3')">3</button>
+<button onclick="sciAppend('-')">−</button>
+<button onclick="memoryAdd()">M+</button>
+
+<button onclick="sciAppend('0')">0</button>
+<button onclick="sciAppend('.')">.</button>
+<button onclick="sciCalculate()">=</button>
+<button onclick="sciAppend('+')">+</button>
+<button onclick="memoryClear()">MC</button>
 
 </div>
 
-<div class="hero-stats">
-
-<div class="stat-card">
-
-<h3>25+</h3>
-<p>Calculators</p>
+</div>
 
 </div>
 
-<div class="stat-card">
+</section>
 
-<h3>15+</h3>
-<p>Property Units</p>
+<!-- PART 1 ENDS HERE -->
+<!-- NEXT = FINANCE + PROPERTY PAGES -->
+  <!-- ==========================================
+     INDEX.HTML (PART 2 OF 4)
+     FINANCE PAGE + PROPERTY PAGE
+========================================== -->
+
+<!-- ==========================================
+     FINANCE PAGE
+========================================== -->
+
+<section
+id="finance-page"
+class="page">
+
+<div class="container">
+
+<div class="page-header">
+
+<h2>
+Finance Calculators
+</h2>
+
+<p>
+EMI, SIP, FD, RD, GST, CAGR & Investment Tools
+</p>
 
 </div>
 
-<div class="stat-card">
+<div class="finance-grid">
 
-<h3>100%</h3>
-<p>Free</p>
+<!-- EMI -->
+
+<div class="tool-card">
+
+<h3>
+🏦 EMI Calculator
+</h3>
+
+<div class="input-group">
+<label>Loan Amount</label>
+<input type="number" id="emiAmount" value="1000000">
+</div>
+
+<div class="input-group">
+<label>Interest Rate (%)</label>
+<input type="number" id="emiRate" value="8.5">
+</div>
+
+<div class="input-group">
+<label>Tenure (Years)</label>
+<input type="number" id="emiYears" value="20">
+</div>
+
+<button
+class="primary-btn"
+onclick="calculateEMI()">
+Calculate EMI
+</button>
+
+<div
+class="result-box"
+id="emiResult">
+₹0
+</div>
 
 </div>
 
-<div class="stat-card">
+<!-- SIP -->
 
-<h3>Fast</h3>
-<p>Mobile Optimized</p>
+<div class="tool-card">
+
+<h3>
+📈 SIP Calculator
+</h3>
+
+<div class="input-group">
+<label>Monthly Investment</label>
+<input type="number" id="sipAmount" value="5000">
+</div>
+
+<div class="input-group">
+<label>Expected Return (%)</label>
+<input type="number" id="sipRate" value="12">
+</div>
+
+<div class="input-group">
+<label>Years</label>
+<input type="number" id="sipYears" value="10">
+</div>
+
+<button
+class="primary-btn"
+onclick="calculateSIP()">
+Calculate SIP
+</button>
+
+<div
+class="result-box"
+id="sipResult">
+₹0
+</div>
+
+</div>
+
+<!-- FD -->
+
+<div class="tool-card">
+
+<h3>
+🏛 FD Calculator
+</h3>
+
+<div class="input-group">
+<label>Deposit Amount</label>
+<input type="number" id="fdAmount" value="100000">
+</div>
+
+<div class="input-group">
+<label>Interest Rate (%)</label>
+<input type="number" id="fdRate" value="7">
+</div>
+
+<div class="input-group">
+<label>Years</label>
+<input type="number" id="fdYears" value="5">
+</div>
+
+<button
+class="primary-btn"
+onclick="calculateFD()">
+Calculate FD
+</button>
+
+<div
+class="result-box"
+id="fdResult">
+₹0
+</div>
+
+</div>
+
+<!-- RD -->
+
+<div class="tool-card">
+
+<h3>
+💳 RD Calculator
+</h3>
+
+<div class="input-group">
+<label>Monthly Deposit</label>
+<input type="number" id="rdAmount" value="5000">
+</div>
+
+<div class="input-group">
+<label>Interest Rate (%)</label>
+<input type="number" id="rdRate" value="7">
+</div>
+
+<div class="input-group">
+<label>Years</label>
+<input type="number" id="rdYears" value="5">
+</div>
+
+<button
+class="primary-btn"
+onclick="calculateRD()">
+Calculate RD
+</button>
+
+<div
+class="result-box"
+id="rdResult">
+₹0
+</div>
+
+</div>
+
+<!-- GST -->
+
+<div class="tool-card">
+
+<h3>
+🧾 GST Calculator
+</h3>
+
+<div class="input-group">
+<label>Amount</label>
+<input type="number" id="gstAmount" value="1000">
+</div>
+
+<div class="input-group">
+<label>GST (%)</label>
+<input type="number" id="gstRate" value="18">
+</div>
+
+<button
+class="primary-btn"
+onclick="calculateGST()">
+Calculate GST
+</button>
+
+<div
+class="result-box"
+id="gstResult">
+₹0
+</div>
+
+</div>
+
+<!-- CAGR -->
+
+<div class="tool-card">
+
+<h3>
+📊 CAGR Calculator
+</h3>
+
+<div class="input-group">
+<label>Initial Value</label>
+<input type="number" id="cagrInitial" value="100000">
+</div>
+
+<div class="input-group">
+<label>Final Value</label>
+<input type="number" id="cagrFinal" value="200000">
+</div>
+
+<div class="input-group">
+<label>Years</label>
+<input type="number" id="cagrYears" value="5">
+</div>
+
+<button
+class="primary-btn"
+onclick="calculateCAGR()">
+Calculate CAGR
+</button>
+
+<div
+class="result-box"
+id="cagrResult">
+0%
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     PROPERTY PAGE
+========================================== -->
+
+<section
+id="property-page"
+class="page">
+
+<div class="container">
+
+<div class="page-header">
+
+<h2>
+Property & Real Estate Tools
+</h2>
+
+<p>
+Land Area Converter, Property Valuation,
+Rental Yield and Stamp Duty Calculator
+</p>
+
+</div>
+
+<div class="property-grid">
+
+<!-- LAND AREA -->
+
+<div class="tool-card">
+
+<h3>
+📐 Land Area Converter
+</h3>
+
+<div class="input-group">
+<label>Area</label>
+<input
+type="number"
+id="landValue"
+value="1000">
+</div>
+
+<div class="input-group">
+<label>Unit</label>
+
+<select id="landUnit">
+
+<option value="sqft">
+Square Feet
+</option>
+
+<option value="sqm">
+Square Meter
+</option>
+
+<option value="acre">
+Acre
+</option>
+
+<option value="hectare">
+Hectare
+</option>
+
+<option value="gaj">
+Gaj
+</option>
+
+<option value="bigha">
+Bigha
+</option>
+
+</select>
+
+</div>
+
+<button
+class="primary-btn"
+onclick="convertLandArea()">
+
+Convert
+
+</button>
+
+<div
+id="landResult"
+class="result-box">
+
+Results appear here
+
+</div>
+
+</div>
+
+<!-- PROPERTY VALUE -->
+
+<div class="tool-card">
+
+<h3>
+🏠 Property Value Calculator
+</h3>
+
+<div class="input-group">
+<label>Area (sq ft)</label>
+<input
+type="number"
+id="propertyArea"
+value="1200">
+</div>
+
+<div class="input-group">
+<label>Rate Per Sq Ft</label>
+<input
+type="number"
+id="propertyRate"
+value="5000">
+</div>
+
+<button
+class="primary-btn"
+onclick="calculatePropertyValue()">
+
+Calculate Value
+
+</button>
+
+<div
+id="propertyValueResult"
+class="result-box">
+
+₹0
+
+</div>
+
+</div>
+
+<!-- RENTAL YIELD -->
+
+<div class="tool-card">
+
+<h3>
+💵 Rental Yield Calculator
+</h3>
+
+<div class="input-group">
+<label>Property Value</label>
+<input
+type="number"
+id="yieldPropertyValue"
+value="5000000">
+</div>
+
+<div class="input-group">
+<label>Monthly Rent</label>
+<input
+type="number"
+id="yieldRent"
+value="25000">
+</div>
+
+<button
+class="primary-btn"
+onclick="calculateRentalYield()">
+
+Calculate Yield
+
+</button>
+
+<div
+id="yieldResult"
+class="result-box">
+
+0%
+
+</div>
+
+</div>
+
+<!-- STAMP DUTY -->
+
+<div class="tool-card">
+
+<h3>
+📜 Stamp Duty Calculator
+</h3>
+
+<div class="input-group">
+<label>Property Price</label>
+<input
+type="number"
+id="stampValue"
+value="5000000">
+</div>
+
+<div class="input-group">
+<label>Duty Rate (%)</label>
+<input
+type="number"
+id="stampRate"
+value="6">
+</div>
+
+<button
+class="primary-btn"
+onclick="calculateStampDuty()">
+
+Calculate Duty
+
+</button>
+
+<div
+id="stampResult"
+class="result-box">
+
+₹0
+
+</div>
+
+</div>
+
+<!-- HOME LOAN ELIGIBILITY -->
+
+<div class="tool-card">
+
+<h3>
+🏦 Loan Eligibility
+</h3>
+
+<div class="input-group">
+<label>Monthly Income</label>
+<input
+type="number"
+id="income"
+value="100000">
+</div>
+
+<div class="input-group">
+<label>Existing EMI</label>
+<input
+type="number"
+id="existingEmi"
+value="10000">
+</div>
+
+<button
+class="primary-btn"
+onclick="calculateEligibility()">
+
+Calculate
+
+</button>
+
+<div
+id="eligibilityResult"
+class="result-box">
+
+₹0
+
+</div>
+
+</div>
+
+<!-- PROPERTY TAX -->
+
+<div class="tool-card">
+
+<h3>
+🏢 Property Tax
+</h3>
+
+<div class="input-group">
+<label>Property Value</label>
+<input
+type="number"
+id="taxValue"
+value="5000000">
+</div>
+
+<div class="input-group">
+<label>Tax Rate (%)</label>
+<input
+type="number"
+id="taxRate"
+value="1">
+</div>
+
+<button
+class="primary-btn"
+onclick="calculatePropertyTax()">
+
+Calculate Tax
+
+</button>
+
+<div
+id="propertyTaxResult"
+class="result-box">
+
+₹0
 
 </div>
 
@@ -159,114 +1016,772 @@ Property Converter
 
 </section>
 
-<!-- =========================================
-QUICK ACCESS CARDS
-========================================= -->
+<!-- PART 2 ENDS HERE -->
+<!-- NEXT = CONVERTER PAGE + DATE PAGE -->
+  <!-- ==========================================
+     INDEX.HTML (PART 3 OF 4)
+     CONVERTER PAGE + DATE PAGE
+========================================== -->
 
-<section class="quick-tools">
+<!-- ==========================================
+     CONVERTER PAGE
+========================================== -->
+
+<section
+id="converter-page"
+class="page">
+
+<div class="container">
+
+<div class="page-header">
+
+<h2>
+Universal Converter
+</h2>
+
+<p>
+International + Indian Unit Conversion System
+</p>
+
+</div>
+
+<div class="converter-layout">
+
+<div class="converter-card">
+
+<div class="input-group">
+
+<label>
+Converter Category
+</label>
+
+<select
+id="converterCategory"
+onchange="changeConverterCategory()">
+
+<option value="length">
+📏 Length
+</option>
+
+<option value="area">
+🏠 Area
+</option>
+
+<option value="weight">
+⚖ Weight
+</option>
+
+<option value="temperature">
+🌡 Temperature
+</option>
+
+<option value="volume">
+🧪 Volume
+</option>
+
+<option value="speed">
+🚗 Speed
+</option>
+
+<option value="data">
+💾 Data
+</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>
+Value
+</label>
+
+<input
+type="number"
+id="converterValue"
+value="1"
+oninput="convertUnits()">
+
+</div>
+
+<div class="input-group">
+
+<label>
+From Unit
+</label>
+
+<select
+id="fromUnit"
+onchange="convertUnits()">
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>
+To Unit
+</label>
+
+<select
+id="toUnit"
+onchange="convertUnits()">
+</select>
+
+</div>
+
+<button
+class="primary-btn"
+onclick="convertUnits()">
+
+Convert
+
+</button>
+
+<div
+id="converterResult"
+class="result-box">
+
+0
+
+</div>
+
+</div>
+
+<!-- QUICK CONVERSION CARDS -->
+
+<div class="quick-conversion-grid">
+
+<div class="mini-card">
+<h4>Indian Land Units</h4>
+<p>
+Acre • Gaj • Bigha • Guntha • Katha • Kanal
+</p>
+</div>
+
+<div class="mini-card">
+<h4>Length Units</h4>
+<p>
+Meter • Km • Mile • Yard • Foot • Inch
+</p>
+</div>
+
+<div class="mini-card">
+<h4>Area Units</h4>
+<p>
+Sq Ft • Sq M • Acre • Hectare • Cent
+</p>
+</div>
+
+<div class="mini-card">
+<h4>Weight Units</h4>
+<p>
+Kg • Gram • Pound • Ounce • Ton
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     DATE & AGE PAGE
+========================================== -->
+
+<section
+id="date-page"
+class="page">
+
+<div class="container">
+
+<div class="page-header">
+
+<h2>
+Date & Age Calculators
+</h2>
+
+<p>
+Age Calculator, Date Difference,
+Retirement Planner & More
+</p>
+
+</div>
+
+<div class="date-grid">
+
+<!-- AGE CALCULATOR -->
+
+<div class="tool-card">
+
+<h3>
+🎂 Age Calculator
+</h3>
+
+<div class="input-group">
+<label>Date Of Birth</label>
+<input
+type="date"
+id="dob">
+</div>
+
+<button
+class="primary-btn"
+onclick="calculateAge()">
+
+Calculate Age
+
+</button>
+
+<div
+id="ageResult"
+class="result-box">
+
+Age will appear here
+
+</div>
+
+</div>
+
+<!-- DATE DIFFERENCE -->
+
+<div class="tool-card">
+
+<h3>
+📅 Date Difference
+</h3>
+
+<div class="input-group">
+<label>Start Date</label>
+<input
+type="date"
+id="startDate">
+</div>
+
+<div class="input-group">
+<label>End Date</label>
+<input
+type="date"
+id="endDate">
+</div>
+
+<button
+class="primary-btn"
+onclick="calculateDateDifference()">
+
+Calculate Difference
+
+</button>
+
+<div
+id="dateDiffResult"
+class="result-box">
+
+0 Days
+
+</div>
+
+</div>
+
+<!-- ADD DAYS -->
+
+<div class="tool-card">
+
+<h3>
+➕ Add Days
+</h3>
+
+<div class="input-group">
+<label>Start Date</label>
+<input
+type="date"
+id="addDate">
+</div>
+
+<div class="input-group">
+<label>Days To Add</label>
+<input
+type="number"
+id="daysToAdd"
+value="30">
+</div>
+
+<button
+class="primary-btn"
+onclick="addDays()">
+
+Calculate
+
+</button>
+
+<div
+id="addDaysResult"
+class="result-box">
+
+Result Date
+
+</div>
+
+</div>
+
+<!-- COUNTDOWN -->
+
+<div class="tool-card">
+
+<h3>
+⏳ Countdown Calculator
+</h3>
+
+<div class="input-group">
+<label>Future Date</label>
+<input
+type="date"
+id="futureDate">
+</div>
+
+<button
+class="primary-btn"
+onclick="calculateCountdown()">
+
+Calculate Countdown
+
+</button>
+
+<div
+id="countdownResult"
+class="result-box">
+
+0 Days
+
+</div>
+
+</div>
+
+<!-- RETIREMENT -->
+
+<div class="tool-card">
+
+<h3>
+🏖 Retirement Planner
+</h3>
+
+<div class="input-group">
+<label>Current Age</label>
+<input
+type="number"
+id="currentAge"
+value="30">
+</div>
+
+<div class="input-group">
+<label>Retirement Age</label>
+<input
+type="number"
+id="retirementAge"
+value="60">
+</div>
+
+<button
+class="primary-btn"
+onclick="calculateRetirement()">
+
+Calculate
+
+</button>
+
+<div
+id="retirementResult"
+class="result-box">
+
+0 Years Left
+
+</div>
+
+</div>
+
+<!-- NEXT BIRTHDAY -->
+
+<div class="tool-card">
+
+<h3>
+🎉 Next Birthday
+</h3>
+
+<div class="input-group">
+<label>Date Of Birth</label>
+<input
+type="date"
+id="birthdayDate">
+</div>
+
+<button
+class="primary-btn"
+onclick="calculateNextBirthday()">
+
+Calculate
+
+</button>
+
+<div
+id="birthdayResult"
+class="result-box">
+
+Birthday Countdown
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     FAQ SECTION
+========================================== -->
+
+<section class="faq-section">
 
 <div class="container">
 
 <h2 class="section-title">
-
-Popular Calculators
-
+Frequently Asked Questions
 </h2>
 
-<div class="tool-grid">
+<div class="faq-grid">
 
-<a href="#finance" class="tool-card">
-
-<div class="tool-icon">
-💰
+<div class="faq-card">
+<h3>Is Calculator360 Free?</h3>
+<p>
+Yes. All calculators are completely free.
+No signup required.
+</p>
 </div>
 
-<h3>EMI Calculator</h3>
-
+<div class="faq-card">
+<h3>Do you support Indian units?</h3>
 <p>
-Home Loan, Car Loan,
-Personal Loan EMI
+Yes. Gaj, Cent, Bigha, Guntha,
+Katha, Kanal and Acre are supported.
 </p>
-
-</a>
-
-<a href="#finance" class="tool-card">
-
-<div class="tool-icon">
-📈
 </div>
 
-<h3>SIP Calculator</h3>
-
+<div class="faq-card">
+<h3>Does it work on mobile?</h3>
 <p>
-Mutual Fund SIP
-Returns Calculator
+Fully responsive and optimized for
+mobile, tablet and desktop devices.
 </p>
-
-</a>
-
-<a href="#property" class="tool-card">
-
-<div class="tool-icon">
-🏠
 </div>
 
-<h3>Property Converter</h3>
-
+<div class="faq-card">
+<h3>Are calculations accurate?</h3>
 <p>
-Gaj, Cent, Acre,
-Bigha & More
+All formulas use standard financial,
+scientific and engineering methods.
 </p>
-
-</a>
-
-<a href="#scientific" class="tool-card">
-
-<div class="tool-icon">
-🧪
 </div>
-
-<h3>Scientific Calculator</h3>
-
-<p>
-Advanced Functions,
-Logarithms & Trig
-</p>
-
-</a>
-
-<a href="#date" class="tool-card">
-
-<div class="tool-icon">
-📅
-</div>
-
-<h3>Age Calculator</h3>
-
-<p>
-Age, Date Difference,
-Business Days
-</p>
-
-</a>
-
-<a href="#converter" class="tool-card">
-
-<div class="tool-icon">
-📏
-</div>
-
-<h3>Unit Converter</h3>
-
-<p>
-Length, Weight,
-Area & More
-</p>
-
-</a>
 
 </div>
 
 </div>
 
 </section>
+
+<!-- PART 3 ENDS HERE -->
+<!-- NEXT = FOOTER + SCRIPT IMPORTS + CLOSING TAGS -->
+  <!-- ==========================================
+     INDEX.HTML (PART 4 OF 4)
+     FOOTER + SCRIPT IMPORTS + SEO
+========================================== -->
+
+<!-- ==========================================
+     FEATURE SECTION
+========================================== -->
+
+<section class="features-section">
+
+<div class="container">
+
+<h2 class="section-title">
+Why Choose Calculator360?
+</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<div class="feature-icon">⚡</div>
+<h3>Instant Results</h3>
+<p>
+Real-time calculations without page refresh.
+</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">📱</div>
+<h3>Mobile First</h3>
+<p>
+Optimized for Android, iPhone, Tablet and Desktop.
+</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">🌍</div>
+<h3>International Units</h3>
+<p>
+Supports Metric, Imperial and Indian Units.
+</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">🔒</div>
+<h3>Privacy Focused</h3>
+<p>
+All calculations happen locally in browser.
+</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">🏠</div>
+<h3>Property Tools</h3>
+<p>
+Land conversion, valuation and yield calculators.
+</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">💰</div>
+<h3>Finance Tools</h3>
+<p>
+EMI, SIP, FD, RD, GST and CAGR calculators.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer class="footer">
+
+<div class="container">
+
+<div class="footer-grid">
+
+<!-- BRAND -->
+
+<div class="footer-column">
+
+<div class="footer-logo">
+⚡ Calculator360
+</div>
+
+<p class="footer-text">
+
+India's modern calculator platform with
+scientific, financial, property and
+unit conversion tools.
+
+</p>
+
+</div>
+
+<!-- CALCULATORS -->
+
+<div class="footer-column">
+
+<h4>
+Calculators
+</h4>
+
+<ul>
+
+<li>
+<a href="#">
+Standard Calculator
+</a>
+</li>
+
+<li>
+<a href="#">
+Scientific Calculator
+</a>
+</li>
+
+<li>
+<a href="#">
+EMI Calculator
+</a>
+</li>
+
+<li>
+<a href="#">
+SIP Calculator
+</a>
+</li>
+
+<li>
+<a href="#">
+GST Calculator
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<!-- PROPERTY -->
+
+<div class="footer-column">
+
+<h4>
+Property Tools
+</h4>
+
+<ul>
+
+<li>
+<a href="#">
+Area Converter
+</a>
+</li>
+
+<li>
+<a href="#">
+Property Value
+</a>
+</li>
+
+<li>
+<a href="#">
+Rental Yield
+</a>
+</li>
+
+<li>
+<a href="#">
+Stamp Duty
+</a>
+</li>
+
+<li>
+<a href="#">
+Loan Eligibility
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<!-- COMPANY -->
+
+<div class="footer-column">
+
+<h4>
+Company
+</h4>
+
+<ul>
+
+<li>
+<a href="about.html">
+About
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+Contact
+</a>
+</li>
+
+<li>
+<a href="privacy-policy.html">
+Privacy Policy
+</a>
+</li>
+
+<li>
+<a href="terms.html">
+Terms
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+
+© 2026 Calculator360.co.in
+All Rights Reserved.
+
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- ==========================================
+     SCHEMA SEO
+========================================== -->
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"WebSite",
+ "name":"Calculator360",
+ "url":"https://calculator360.co.in",
+ "description":"Modern online calculator with scientific, finance, property and converter tools."
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Organization",
+ "name":"Calculator360",
+ "url":"https://calculator360.co.in",
+ "logo":"https://calculator360.co.in/logo.png"
+}
+</script>
+
+<!-- ==========================================
+     JAVASCRIPT FILES
+========================================== -->
+
+<script src="js/app.js"></script>
+
+<script src="js/calculator.js"></script>
+
+<script src="js/scientific.js"></script>
+
+<script src="js/converter.js"></script>
+
+<script src="js/finance.js"></script>
+
+<script src="js/property.js"></script>
+
+<script src="js/date.js"></script>
+
+</body>
+</html>
+  
