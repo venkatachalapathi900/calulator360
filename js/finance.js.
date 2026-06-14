@@ -1,0 +1,400 @@
+/* ==========================================
+   CALCULATOR360 PRO
+   FINANCE.JS
+   EMI • SIP • FD • RD • GST
+========================================== */
+
+"use strict";
+
+/* ==========================================
+   FORMATTER
+========================================== */
+
+function formatCurrency(value) {
+    return new Intl.NumberFormat("en-IN", {
+        style: "currency",
+        currency: "INR",
+        maximumFractionDigits: 0
+    }).format(value);
+}
+
+/* ==========================================
+   EMI CALCULATOR
+========================================== */
+
+function calculateEMI() {
+
+    const principal =
+        parseFloat(
+            document.getElementById("emiAmount")?.value || 0
+        );
+
+    const annualRate =
+        parseFloat(
+            document.getElementById("emiRate")?.value || 0
+        );
+
+    const tenureMonths =
+        parseFloat(
+            document.getElementById("emiTenure")?.value || 0
+        );
+
+    if (
+        principal <= 0 ||
+        annualRate <= 0 ||
+        tenureMonths <= 0
+    ) {
+        return;
+    }
+
+    const monthlyRate =
+        annualRate / 12 / 100;
+
+    const emi =
+        principal *
+        monthlyRate *
+        Math.pow(
+            1 + monthlyRate,
+            tenureMonths
+        ) /
+        (
+            Math.pow(
+                1 + monthlyRate,
+                tenureMonths
+            ) - 1
+        );
+
+    const totalPayment =
+        emi * tenureMonths;
+
+    const interest =
+        totalPayment - principal;
+
+    document.getElementById(
+        "emiMonthly"
+    ).innerText =
+        formatCurrency(emi);
+
+    document.getElementById(
+        "emiInterest"
+    ).innerText =
+        formatCurrency(interest);
+
+    document.getElementById(
+        "emiTotal"
+    ).innerText =
+        formatCurrency(totalPayment);
+}
+
+/* ==========================================
+   SIP CALCULATOR
+========================================== */
+
+function calculateSIP() {
+
+    const monthlyInvestment =
+        parseFloat(
+            document.getElementById("sipAmount")?.value || 0
+        );
+
+    const annualReturn =
+        parseFloat(
+            document.getElementById("sipRate")?.value || 0
+        );
+
+    const years =
+        parseFloat(
+            document.getElementById("sipYears")?.value || 0
+        );
+
+    const months =
+        years * 12;
+
+    const rate =
+        annualReturn / 12 / 100;
+
+    const futureValue =
+        monthlyInvestment *
+        (
+            (
+                Math.pow(
+                    1 + rate,
+                    months
+                ) - 1
+            ) /
+            rate
+        ) *
+        (
+            1 + rate
+        );
+
+    const invested =
+        monthlyInvestment * months;
+
+    const gains =
+        futureValue - invested;
+
+    document.getElementById(
+        "sipValue"
+    ).innerText =
+        formatCurrency(futureValue);
+
+    document.getElementById(
+        "sipInvested"
+    ).innerText =
+        formatCurrency(invested);
+
+    document.getElementById(
+        "sipGain"
+    ).innerText =
+        formatCurrency(gains);
+}
+
+/* ==========================================
+   FD CALCULATOR
+========================================== */
+
+function calculateFD() {
+
+    const principal =
+        parseFloat(
+            document.getElementById("fdAmount")?.value || 0
+        );
+
+    const rate =
+        parseFloat(
+            document.getElementById("fdRate")?.value || 0
+        );
+
+    const years =
+        parseFloat(
+            document.getElementById("fdYears")?.value || 0
+        );
+
+    const maturity =
+        principal *
+        Math.pow(
+            1 + rate / 100,
+            years
+        );
+
+    const interest =
+        maturity - principal;
+
+    document.getElementById(
+        "fdMaturity"
+    ).innerText =
+        formatCurrency(maturity);
+
+    document.getElementById(
+        "fdInterest"
+    ).innerText =
+        formatCurrency(interest);
+}
+
+/* ==========================================
+   RD CALCULATOR
+========================================== */
+
+function calculateRD() {
+
+    const monthlyDeposit =
+        parseFloat(
+            document.getElementById("rdAmount")?.value || 0
+        );
+
+    const rate =
+        parseFloat(
+            document.getElementById("rdRate")?.value || 0
+        );
+
+    const years =
+        parseFloat(
+            document.getElementById("rdYears")?.value || 0
+        );
+
+    const months =
+        years * 12;
+
+    const quarterlyRate =
+        rate / 400;
+
+    let maturity = 0;
+
+    for (
+        let i = 0;
+        i < months;
+        i++
+    ) {
+        maturity +=
+            monthlyDeposit *
+            Math.pow(
+                1 + quarterlyRate,
+                (months - i) / 3
+            );
+    }
+
+    const invested =
+        monthlyDeposit * months;
+
+    const gains =
+        maturity - invested;
+
+    document.getElementById(
+        "rdMaturity"
+    ).innerText =
+        formatCurrency(maturity);
+
+    document.getElementById(
+        "rdGain"
+    ).innerText =
+        formatCurrency(gains);
+}
+
+/* ==========================================
+   GST CALCULATOR
+========================================== */
+
+function calculateGST() {
+
+    const amount =
+        parseFloat(
+            document.getElementById("gstAmount")?.value || 0
+        );
+
+    const rate =
+        parseFloat(
+            document.getElementById("gstRate")?.value || 18
+        );
+
+    const type =
+        document.getElementById("gstType")?.value;
+
+    let gstAmount;
+    let finalAmount;
+
+    if (type === "exclusive") {
+
+        gstAmount =
+            amount * rate / 100;
+
+        finalAmount =
+            amount + gstAmount;
+
+    } else {
+
+        gstAmount =
+            amount -
+            (amount / (1 + rate / 100));
+
+        finalAmount =
+            amount - gstAmount;
+    }
+
+    document.getElementById(
+        "gstValue"
+    ).innerText =
+        formatCurrency(gstAmount);
+
+    document.getElementById(
+        "gstTotal"
+    ).innerText =
+        formatCurrency(finalAmount);
+}
+
+/* ==========================================
+   PPF CALCULATOR
+========================================== */
+
+function calculatePPF() {
+
+    const yearlyInvestment =
+        parseFloat(
+            document.getElementById("ppfAmount")?.value || 0
+        );
+
+    const years =
+        parseFloat(
+            document.getElementById("ppfYears")?.value || 15
+        );
+
+    const rate = 7.1;
+
+    let maturity = 0;
+
+    for (
+        let i = 1;
+        i <= years;
+        i++
+    ) {
+        maturity =
+            (
+                maturity +
+                yearlyInvestment
+            ) *
+            (
+                1 +
+                rate / 100
+            );
+    }
+
+    const invested =
+        yearlyInvestment * years;
+
+    document.getElementById(
+        "ppfMaturity"
+    ).innerText =
+        formatCurrency(maturity);
+
+    document.getElementById(
+        "ppfInvested"
+    ).innerText =
+        formatCurrency(invested);
+}
+
+/* ==========================================
+   CAGR CALCULATOR
+========================================== */
+
+function calculateCAGR() {
+
+    const initial =
+        parseFloat(
+            document.getElementById("cagrInitial")?.value || 0
+        );
+
+    const finalValue =
+        parseFloat(
+            document.getElementById("cagrFinal")?.value || 0
+        );
+
+    const years =
+        parseFloat(
+            document.getElementById("cagrYears")?.value || 1
+        );
+
+    const cagr =
+        (
+            Math.pow(
+                finalValue / initial,
+                1 / years
+            ) - 1
+        ) * 100;
+
+    document.getElementById(
+        "cagrResult"
+    ).innerText =
+        cagr.toFixed(2) + "%";
+}
+
+/* ==========================================
+   EXPORT
+========================================== */
+
+window.calculateEMI = calculateEMI;
+window.calculateSIP = calculateSIP;
+window.calculateFD = calculateFD;
+window.calculateRD = calculateRD;
+window.calculateGST = calculateGST;
+window.calculatePPF = calculatePPF;
+window.calculateCAGR = calculateCAGR;
