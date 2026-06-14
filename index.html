@@ -5,93 +5,153 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calculator360 - India's Smart Calculator Platform</title>
+<title>Calculator360 Pro - Free Online Calculators & Property Tools</title>
 
 <meta name="description"
-content="Free online calculators for EMI, SIP, FD, GST, Property Area Conversion, BMI, Age Calculator and more.">
+content="Free online calculator suite including Scientific Calculator, EMI Calculator, SIP Calculator, GST Calculator, Property Converter, Area Converter, Age Calculator and more.">
+
+<meta name="keywords"
+content="calculator, emi calculator, sip calculator, gst calculator, property converter, gaj to sqft, cent to sqft, bigha converter, online calculator">
+
+<meta name="theme-color" content="#6C63FF">
+
+<link rel="canonical" href="https://calculator360.co.in">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script defer src="js/app.js"></script>
+<script defer src="js/calculator.js"></script>
+<script defer src="js/scientific.js"></script>
+<script defer src="js/converter.js"></script>
+<script defer src="js/property.js"></script>
+<script defer src="js/finance.js"></script>
+<script defer src="js/date.js"></script>
 
 </head>
+
 <body>
 
-<!-- =====================================
+<!-- =========================================
 NAVBAR
-===================================== -->
+========================================= -->
 
-<nav class="navbar">
+<header class="navbar">
 
-<div class="container nav-inner">
+<div class="container nav-container">
 
 <a href="/" class="logo">
+<span>∑</span>
 Calculator360
 </a>
 
-<div class="nav-links">
+<nav class="desktop-nav">
 
+<a href="#standard">Standard</a>
+<a href="#scientific">Scientific</a>
 <a href="#finance">Finance</a>
-
-<a href="#converter">Converter</a>
-
 <a href="#property">Property</a>
-
-<a href="#health">Health</a>
-
-<a href="#faq">FAQ</a>
-
-</div>
-
-</div>
+<a href="#converter">Converter</a>
+<a href="#date">Date</a>
 
 </nav>
 
-<!-- =====================================
-HERO
-===================================== -->
+<div class="nav-actions">
+
+<button id="themeToggle" class="theme-btn">
+🌙
+</button>
+
+<button class="mobile-menu-btn">
+☰
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- =========================================
+HERO SECTION
+========================================= -->
 
 <section class="hero">
 
 <div class="container">
 
+<div class="hero-content">
+
 <div class="hero-badge">
-🇮🇳 Trusted by Thousands of Users
+
+🚀 India's Most Advanced Calculator Platform
+
 </div>
 
 <h1>
-India's Smart Calculator Platform
+
+One Platform For Every Calculation
+
 </h1>
 
 <p>
 
-EMI Calculator, SIP Calculator, FD Calculator,
-GST Calculator, Property Converter,
-BMI Calculator, Age Calculator,
-Scientific Calculator and 100+ tools.
+Professional calculators for finance, property,
+science, business and daily use.
+
+Convert Gaj, Cent, Guntha, Bigha, Kanal,
+Marla, Katha, Ground, Acre, Hectare,
+Square Feet and more instantly.
 
 </p>
 
-<div class="hero-actions">
+<div class="hero-buttons">
 
-<button class="btn btn-primary">
-Explore Tools
-</button>
-
-<button class="btn btn-secondary">
+<a href="#standard" class="btn btn-primary">
 Start Calculating
-</button>
+</a>
+
+<a href="#property" class="btn btn-secondary">
+Property Converter
+</a>
 
 </div>
 
-<div class="search-wrap">
+<div class="hero-stats">
 
-<input
-type="text"
-class="search-box"
-placeholder="Search calculator..."
-id="calculatorSearch">
+<div class="stat-card">
+
+<h3>25+</h3>
+<p>Calculators</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>15+</h3>
+<p>Property Units</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>100%</h3>
+<p>Free</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Fast</h3>
+<p>Mobile Optimized</p>
+
+</div>
+
+</div>
 
 </div>
 
@@ -99,353 +159,114 @@ id="calculatorSearch">
 
 </section>
 
-<!-- =====================================
-POPULAR TOOLS
-===================================== -->
+<!-- =========================================
+QUICK ACCESS CARDS
+========================================= -->
 
-<section class="section">
+<section class="quick-tools">
 
 <div class="container">
 
 <h2 class="section-title">
+
 Popular Calculators
+
 </h2>
 
 <div class="tool-grid">
 
-<div class="tool-card">
+<a href="#finance" class="tool-card">
 
-<div class="tool-icon">🏦</div>
-
-<div class="tool-title">
-EMI Calculator
+<div class="tool-icon">
+💰
 </div>
 
-<div class="tool-desc">
-Calculate monthly EMI, total interest and loan repayment schedule.
-</div>
-
-</div>
-
-<div class="tool-card">
-
-<div class="tool-icon">📈</div>
-
-<div class="tool-title">
-SIP Calculator
-</div>
-
-<div class="tool-desc">
-Estimate future wealth and returns from mutual fund SIP investments.
-</div>
-
-</div>
-
-<div class="tool-card">
-
-<div class="tool-icon">💰</div>
-
-<div class="tool-title">
-FD Calculator
-</div>
-
-<div class="tool-desc">
-Calculate fixed deposit maturity amount and earned interest.
-</div>
-
-</div>
-
-<div class="tool-card">
-
-<div class="tool-icon">🧾</div>
-
-<div class="tool-title">
-GST Calculator
-</div>
-
-<div class="tool-desc">
-Add or remove GST instantly for any amount.
-</div>
-
-</div>
-
-<div class="tool-card">
-
-<div class="tool-icon">🏡</div>
-
-<div class="tool-title">
-Property Area Converter
-</div>
-
-<div class="tool-desc">
-Convert Gaj, Guntha, Bigha, Cent, Acre, Sq Ft and Sq Meter.
-</div>
-
-</div>
-
-<div class="tool-card">
-
-<div class="tool-icon">⚖️</div>
-
-<div class="tool-title">
-BMI Calculator
-</div>
-
-<div class="tool-desc">
-Calculate BMI and identify your weight category.
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =====================================
-CATEGORIES
-===================================== -->
-
-<section class="section" id="finance">
-
-<div class="container">
-
-<h2 class="section-title">
-Calculator Categories
-</h2>
-
-<div class="category-grid">
-
-<div class="category-card">
-
-<h3>
-💰 Finance
-</h3>
-
-<ul>
-
-<li>EMI Calculator</li>
-<li>SIP Calculator</li>
-<li>FD Calculator</li>
-<li>RD Calculator</li>
-<li>PPF Calculator</li>
-<li>NPS Calculator</li>
-<li>CAGR Calculator</li>
-
-</ul>
-
-</div>
-
-<div class="category-card">
-
-<h3>
-📏 Conversion
-</h3>
-
-<ul>
-
-<li>Length Converter</li>
-<li>Weight Converter</li>
-<li>Temperature Converter</li>
-<li>Area Converter</li>
-<li>Volume Converter</li>
-<li>Data Converter</li>
-
-</ul>
-
-</div>
-
-<div class="category-card">
-
-<h3>
-🏡 Property
-</h3>
-
-<ul>
-
-<li>Gaj to Sq Ft</li>
-<li>Cent to Acre</li>
-<li>Guntha Converter</li>
-<li>Bigha Converter</li>
-<li>Kanal Converter</li>
-<li>Marla Converter</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =====================================
-PROPERTY UNITS
-===================================== -->
-
-<section class="section" id="property">
-
-<div class="container">
-
-<h2 class="section-title">
-Indian Property Units
-</h2>
-
-<div class="property-highlight">
-
-<div class="property-unit">
-<strong>Gaj</strong>
-Square Yard
-</div>
-
-<div class="property-unit">
-<strong>Cent</strong>
-1/100 Acre
-</div>
-
-<div class="property-unit">
-<strong>Guntha</strong>
-121 Sq Yards
-</div>
-
-<div class="property-unit">
-<strong>Bigha</strong>
-Regional Unit
-</div>
-
-<div class="property-unit">
-<strong>Kanal</strong>
-North India
-</div>
-
-<div class="property-unit">
-<strong>Marla</strong>
-Residential Plots
-</div>
-
-<div class="property-unit">
-<strong>Acre</strong>
-Land Measurement
-</div>
-
-<div class="property-unit">
-<strong>Hectare</strong>
-Metric Area
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =====================================
-HEALTH
-===================================== -->
-
-<section class="section" id="health">
-
-<div class="container">
-
-<h2 class="section-title">
-Health Tools
-</h2>
-
-<div class="tool-grid">
-
-<div class="tool-card">
-<div class="tool-icon">⚖️</div>
-<div class="tool-title">BMI Calculator</div>
-<div class="tool-desc">Body Mass Index Calculator.</div>
-</div>
-
-<div class="tool-card">
-<div class="tool-icon">🎂</div>
-<div class="tool-title">Age Calculator</div>
-<div class="tool-desc">Calculate exact age in years, months and days.</div>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =====================================
-FAQ
-===================================== -->
-
-<section class="section" id="faq">
-
-<div class="container">
-
-<div class="faq">
-
-<h2 class="section-title">
-Frequently Asked Questions
-</h2>
-
-<div class="faq-item">
-
-<div class="faq-question">
-How is EMI calculated?
-</div>
-
-<div class="faq-answer">
-EMI is calculated using the reducing balance method based on loan amount, interest rate and tenure.
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<div class="faq-question">
-What is SIP?
-</div>
-
-<div class="faq-answer">
-SIP stands for Systematic Investment Plan. It allows investors to invest a fixed amount regularly.
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<div class="faq-question">
-How many square feet are in 1 Gaj?
-</div>
-
-<div class="faq-answer">
-1 Gaj equals 9 square feet.
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =====================================
-FOOTER
-===================================== -->
-
-<footer class="footer">
-
-<div class="container">
+<h3>EMI Calculator</h3>
 
 <p>
-© 2026 Calculator360. All Rights Reserved.
+Home Loan, Car Loan,
+Personal Loan EMI
 </p>
+
+</a>
+
+<a href="#finance" class="tool-card">
+
+<div class="tool-icon">
+📈
+</div>
+
+<h3>SIP Calculator</h3>
+
+<p>
+Mutual Fund SIP
+Returns Calculator
+</p>
+
+</a>
+
+<a href="#property" class="tool-card">
+
+<div class="tool-icon">
+🏠
+</div>
+
+<h3>Property Converter</h3>
+
+<p>
+Gaj, Cent, Acre,
+Bigha & More
+</p>
+
+</a>
+
+<a href="#scientific" class="tool-card">
+
+<div class="tool-icon">
+🧪
+</div>
+
+<h3>Scientific Calculator</h3>
+
+<p>
+Advanced Functions,
+Logarithms & Trig
+</p>
+
+</a>
+
+<a href="#date" class="tool-card">
+
+<div class="tool-icon">
+📅
+</div>
+
+<h3>Age Calculator</h3>
+
+<p>
+Age, Date Difference,
+Business Days
+</p>
+
+</a>
+
+<a href="#converter" class="tool-card">
+
+<div class="tool-icon">
+📏
+</div>
+
+<h3>Unit Converter</h3>
+
+<p>
+Length, Weight,
+Area & More
+</p>
+
+</a>
 
 </div>
 
-</footer>
+</div>
 
-<script src="js/app.js"></script>
-
-</body>
-</html>
+</section>
