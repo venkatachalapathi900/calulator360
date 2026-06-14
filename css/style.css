@@ -1,0 +1,750 @@
+/* ==================================================
+   CALCULATOR360 PRO
+   GLOBAL DESIGN SYSTEM
+================================================== */
+
+:root{
+
+  --bg:#0b1020;
+  --surface:#111827;
+  --surface-2:#182133;
+  --surface-3:#212d44;
+
+  --text:#f8fafc;
+  --text-light:#cbd5e1;
+  --text-muted:#94a3b8;
+
+  --primary:#6366f1;
+  --primary-dark:#4f46e5;
+
+  --secondary:#06b6d4;
+
+  --success:#22c55e;
+  --warning:#f59e0b;
+  --danger:#ef4444;
+
+  --border:rgba(255,255,255,.08);
+
+  --radius-sm:12px;
+  --radius:18px;
+  --radius-lg:28px;
+
+  --shadow:
+  0 20px 50px rgba(0,0,0,.25);
+
+  --max-width:1400px;
+
+}
+
+
+/* ==================================================
+   RESET
+================================================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  font-family:
+  Inter,
+  system-ui,
+  sans-serif;
+
+  background:
+  radial-gradient(
+  circle at top left,
+  #1e293b,
+  #0b1020 45%
+  );
+
+  color:var(--text);
+
+  min-height:100vh;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  max-width:100%;
+}
+
+button{
+  font-family:inherit;
+}
+
+/* ==================================================
+   CONTAINER
+================================================== */
+
+.container{
+
+  width:min(
+  92%,
+  var(--max-width)
+  );
+
+  margin:auto;
+
+}
+
+/* ==================================================
+   NAVBAR
+================================================== */
+
+.navbar{
+
+  position:sticky;
+  top:0;
+
+  z-index:999;
+
+  backdrop-filter:blur(18px);
+
+  background:
+  rgba(11,16,32,.7);
+
+  border-bottom:
+  1px solid var(--border);
+
+}
+
+.nav-inner{
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  min-height:78px;
+
+}
+
+.logo{
+
+  font-size:1.7rem;
+  font-weight:800;
+
+  background:
+  linear-gradient(
+  135deg,
+  #818cf8,
+  #06b6d4
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+}
+
+.nav-links{
+
+  display:flex;
+  gap:24px;
+
+}
+
+.nav-links a{
+
+  color:var(--text-light);
+  font-size:.95rem;
+
+  transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+  color:white;
+
+}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero{
+
+  padding:
+  100px
+  0
+  80px;
+
+  text-align:center;
+
+}
+
+.hero-badge{
+
+  display:inline-flex;
+
+  padding:
+  10px
+  18px;
+
+  border-radius:999px;
+
+  border:
+  1px solid rgba(99,102,241,.3);
+
+  background:
+  rgba(99,102,241,.1);
+
+  color:#a5b4fc;
+
+  margin-bottom:24px;
+
+}
+
+.hero h1{
+
+  font-size:
+  clamp(
+  3rem,
+  8vw,
+  5.5rem
+  );
+
+  font-weight:900;
+
+  line-height:1.05;
+
+  max-width:1000px;
+
+  margin:
+  0 auto 24px;
+
+}
+
+.hero p{
+
+  color:var(--text-light);
+
+  font-size:1.15rem;
+
+  max-width:800px;
+
+  margin:auto;
+
+  line-height:1.8;
+
+}
+
+.hero-actions{
+
+  display:flex;
+  justify-content:center;
+  gap:16px;
+
+  margin-top:40px;
+
+  flex-wrap:wrap;
+
+}
+
+/* ==================================================
+   BUTTONS
+================================================== */
+
+.btn{
+
+  border:none;
+
+  padding:
+  14px
+  28px;
+
+  border-radius:14px;
+
+  cursor:pointer;
+
+  transition:.25s;
+
+  font-weight:700;
+
+}
+
+.btn-primary{
+
+  background:var(--primary);
+  color:white;
+
+}
+
+.btn-primary:hover{
+
+  background:var(--primary-dark);
+
+}
+
+.btn-secondary{
+
+  background:
+  rgba(255,255,255,.06);
+
+  color:white;
+
+  border:
+  1px solid var(--border);
+
+}
+
+/* ==================================================
+   SEARCH
+================================================== */
+
+.search-wrap{
+
+  max-width:700px;
+  margin:50px auto;
+
+}
+
+.search-box{
+
+  width:100%;
+
+  background:
+  rgba(255,255,255,.05);
+
+  border:
+  1px solid var(--border);
+
+  border-radius:20px;
+
+  padding:
+  18px
+  24px;
+
+  color:white;
+
+  font-size:1rem;
+
+}
+
+.search-box:focus{
+
+  outline:none;
+
+  border-color:
+  var(--primary);
+
+}
+
+/* ==================================================
+   QUICK TOOLS
+================================================== */
+
+.section{
+
+  padding:
+  80px
+  0;
+
+}
+
+.section-title{
+
+  font-size:2.2rem;
+  font-weight:800;
+
+  margin-bottom:40px;
+
+}
+
+.tool-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(
+  auto-fit,
+  minmax(260px,1fr)
+  );
+
+  gap:24px;
+
+}
+
+.tool-card{
+
+  background:
+  rgba(255,255,255,.04);
+
+  border:
+  1px solid var(--border);
+
+  border-radius:24px;
+
+  padding:28px;
+
+  transition:.3s;
+
+  cursor:pointer;
+
+  backdrop-filter:blur(18px);
+
+}
+
+.tool-card:hover{
+
+  transform:
+  translateY(-6px);
+
+  border-color:
+  rgba(99,102,241,.4);
+
+}
+
+.tool-icon{
+
+  font-size:2rem;
+
+  margin-bottom:14px;
+
+}
+
+.tool-title{
+
+  font-size:1.2rem;
+  font-weight:700;
+
+  margin-bottom:10px;
+
+}
+
+.tool-desc{
+
+  color:var(--text-muted);
+
+  line-height:1.7;
+
+}
+
+/* ==================================================
+   CATEGORY GRID
+================================================== */
+
+.category-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(
+  auto-fit,
+  minmax(320px,1fr)
+  );
+
+  gap:24px;
+
+}
+
+.category-card{
+
+  background:
+  linear-gradient(
+  135deg,
+  rgba(99,102,241,.12),
+  rgba(6,182,212,.08)
+  );
+
+  border:
+  1px solid var(--border);
+
+  border-radius:24px;
+
+  padding:28px;
+
+}
+
+.category-card h3{
+
+  margin-bottom:16px;
+
+  font-size:1.4rem;
+
+}
+
+.category-card ul{
+
+  list-style:none;
+
+}
+
+.category-card li{
+
+  padding:10px 0;
+
+  color:var(--text-light);
+
+}
+
+/* ==================================================
+   CALCULATOR CARD
+================================================== */
+
+.calculator-card{
+
+  background:
+  rgba(255,255,255,.05);
+
+  border:
+  1px solid var(--border);
+
+  border-radius:24px;
+
+  padding:30px;
+
+}
+
+.calc-title{
+
+  font-size:1.4rem;
+  font-weight:800;
+
+  margin-bottom:24px;
+
+}
+
+.form-group{
+
+  margin-bottom:18px;
+
+}
+
+.form-group label{
+
+  display:block;
+
+  margin-bottom:8px;
+
+  color:var(--text-light);
+
+}
+
+.form-control{
+
+  width:100%;
+
+  padding:
+  14px
+  16px;
+
+  background:
+  rgba(255,255,255,.05);
+
+  border:
+  1px solid var(--border);
+
+  border-radius:14px;
+
+  color:white;
+
+}
+
+.form-control:focus{
+
+  outline:none;
+
+  border-color:
+  var(--primary);
+
+}
+
+/* ==================================================
+   RESULT CARD
+================================================== */
+
+.result-card{
+
+  margin-top:24px;
+
+  background:
+  linear-gradient(
+  135deg,
+  rgba(99,102,241,.15),
+  rgba(6,182,212,.1)
+  );
+
+  border-radius:20px;
+
+  padding:24px;
+
+}
+
+.result-label{
+
+  color:var(--text-light);
+
+  margin-bottom:8px;
+
+}
+
+.result-value{
+
+  font-size:2rem;
+
+  font-weight:800;
+
+}
+
+/* ==================================================
+   FAQ
+================================================== */
+
+.faq{
+
+  max-width:900px;
+  margin:auto;
+
+}
+
+.faq-item{
+
+  margin-bottom:18px;
+
+  border:
+  1px solid var(--border);
+
+  border-radius:18px;
+
+  overflow:hidden;
+
+}
+
+.faq-question{
+
+  padding:20px;
+
+  font-weight:700;
+
+  background:
+  rgba(255,255,255,.03);
+
+}
+
+.faq-answer{
+
+  padding:20px;
+
+  color:var(--text-light);
+
+  line-height:1.8;
+
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.footer{
+
+  border-top:
+  1px solid var(--border);
+
+  margin-top:100px;
+
+  padding:
+  50px
+  0;
+
+  text-align:center;
+
+  color:var(--text-muted);
+
+}
+
+/* ==================================================
+   PROPERTY CONVERTER
+================================================== */
+
+.property-highlight{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(
+  auto-fit,
+  minmax(160px,1fr)
+  );
+
+  gap:14px;
+
+}
+
+.property-unit{
+
+  background:
+  rgba(255,255,255,.05);
+
+  border:
+  1px solid var(--border);
+
+  padding:16px;
+
+  border-radius:14px;
+
+  text-align:center;
+
+}
+
+.property-unit strong{
+
+  display:block;
+
+  margin-bottom:6px;
+
+}
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media(max-width:768px){
+
+  .hero{
+
+    padding-top:70px;
+
+  }
+
+  .hero h1{
+
+    font-size:2.6rem;
+
+  }
+
+  .hero p{
+
+    font-size:1rem;
+
+  }
+
+  .nav-links{
+
+    display:none;
+
+  }
+
+  .section{
+
+    padding:50px 0;
+
+  }
+
+  .calculator-card{
+
+    padding:22px;
+
+  }
+
+}
